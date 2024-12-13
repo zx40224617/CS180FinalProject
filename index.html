@@ -19,8 +19,333 @@
     <h1>Final Project - Neural Radiance Field</h1>
     <div class="wrapper">
       <h2 class="title">Background of the project:</h2>
-      <p class="introduction"></p>
+      <p class="introduction">
+        NeRF, Neurial Radiance Field is a technique that was introduced here at
+        Berkeley 4 years ago. The idea is that, given all the extrinsics and
+        intrinsics of camera taking picture at differenet places, we can use the
+        pictures to reconstruct the novel view of the object from any arbitrary
+        camera extrinsics to get a 3D view of a scene.
+      </p>
       <h3>Part 1. Fit a Neural Field to a 2D Image</h3>
+      <p class="introduction">
+        In the lecture we talked about that we can use NeRF to ro represent a 3D
+        scene. But before we got into that, we can start with a 2D example that
+        is much easier. And since there is nocecpt of radiance in 2D, so we only
+        use Neural Field \(F: \{u, v\} \rightarrow \{r, g, b\} \) where u, v are
+        the pixel coordinate instead of the original NeRF where \(F: \{x, y, z,
+        \theta, \phi \} \rightarrow \{r, g, b\} \). So in this part, we are
+        going to create a neural field that can represent a 2D image and fit the
+        image by optimizing a Multilayer Perceptron
+      </p>
+
+      <h4>Details about the Multilayer Perceptron:</h4>
+      <p calss="introduction">
+        The architecture of the model over here is fairly easy. I technically
+        just follow the graph that is provided in the project spec. After we get
+        the Sinusoidal Positional Encoding of the 2D corrdinates, there are 3
+        consecutive bloacks of 256 hindden units Linear Layer followed by ReLU
+        activation. And then a Linear Layer of 3 hidden units and a Sigmoid
+        activation at the end to predict the rgb (3D) at the corresponding pixel
+        coordinates. Here are my my results:
+      </p>
+      <p class="imgTitle">Original Image:</p>
+      <img src="images/fox.jpg" class="noteImage" />
+      <p class="imgTitle">
+        PSNR over 2000 iterations with lr = 0.01, batch_szie = 10000
+      </p>
+      <img src="images/fox PSNR 2000.jpg" class="noteImage" />
+
+      <p class="imgTitle">Predicted Image at different iterations:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">10 iterations:</p>
+          <img src="images/fox reconstruction 10.jpg" class="resultImage" />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">20 iterations:</p>
+          <img src="images/fox reconstruction 20.jpg" class="resultImage" />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">50 iterations:</p>
+          <img src="images/fox reconstruction 50.jpg" class="resultImage" />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">100 iterations:</p>
+          <img src="images/fox reconstruction 100.jpg" class="resultImage" />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">200 iterations:</p>
+          <img src="images/fox reconstruction 200.jpg" class="resultImage" />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">300 iterations:</p>
+          <img src="images/fox reconstruction 300.jpg" class="resultImage" />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">500 iterations:</p>
+          <img src="images/fox reconstruction 500.jpg" class="resultImage" />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">1000 iterations:</p>
+          <img src="images/fox reconstruction 1000.jpg" class="resultImage" />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">2000 iterations:</p>
+          <img src="images/fox reconstruction 2000.jpg" class="resultImage" />
+        </div>
+      </div>
+
+      <p class="imgTitle">
+        PSNR over 2000 iterations with lr = 0.001, batch_szie = 10000
+      </p>
+      <img src="images/fox PSNR 2000 lr = 0.001.jpg" class="noteImage" />
+
+      <p class="imgTitle">Predicted Image at different iterations:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">10 iterations:</p>
+          <img
+            src="images/fox reconstruction 10 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">20 iterations:</p>
+          <img
+            src="images/fox reconstruction 20 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">50 iterations:</p>
+          <img
+            src="images/fox reconstruction 50 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">100 iterations:</p>
+          <img
+            src="images/fox reconstruction 100 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">200 iterations:</p>
+          <img
+            src="images/fox reconstruction 200 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">300 iterations:</p>
+          <img
+            src="images/fox reconstruction 300 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">500 iterations:</p>
+          <img
+            src="images/fox reconstruction 500 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">1000 iterations:</p>
+          <img
+            src="images/fox reconstruction 1000 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">2000 iterations:</p>
+          <img
+            src="images/fox reconstruction 2000 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+      <p class="introduction">
+        As we can see in the predicted graph, with the learning rate 0.001 that
+        is a lot smaller than the recommened 0.01, the model is converging a
+        liitle slower, but it will eventually get a good result. Here the result
+        using my own image:
+      </p>
+      <p class="imgTitle">Original Image:</p>
+      <img src="images/Berkeley Dawn.webp" class="noteImage" />
+      <p class="imgTitle">
+        PSNR over 2000 iterations with lr = 0.01, batch_szie = 10000
+      </p>
+      <img src="images/Berkeley PSNR 2000 lr = 0.01.jpg" class="noteImage" />
+      <p class="imgTitle">Predicted Image at different iterations:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">10 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 10 lr = 0.01.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">20 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 20 lr = 0.01.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">50 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 50 lr = 0.01.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">100 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 100 lr = 0.01.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">200 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 200 lr = 0.01.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">300 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 300 lr = 0.01.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">500 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 500 lr = 0.01.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">1000 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 1000 lr = 0.01.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">2000 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 2000 lr = 0.01.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+      <p class="imgTitle">
+        PSNR over 2000 iterations with lr = 0.001, batch_szie = 10000
+      </p>
+      <img src="images/Berkeley PSNR 2000 lr = 0.001.jpg" class="noteImage" />
+
+      <p class="imgTitle">Predicted Image at different iterations:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">10 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 10 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">20 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 20 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">50 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 50 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">100 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 100 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">200 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 200 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">300 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 300 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">500 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 500 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">1000 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 1000 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">2000 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 2000 lr = 0.001.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+      <p class="introduction">
+        As we can see, we got similar obeservation as above, when we decrease
+        the learning rate here, it also take the model more time to converge,
+        but it still goes to good results quickly. Also, we can see that for a
+        more complex image like this, it is harder to reach a higher PSNR.
+      </p>
+      <hr />
     </div>
   </body>
 </html>
