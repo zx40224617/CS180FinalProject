@@ -48,6 +48,8 @@
         activation at the end to predict the rgb (3D) at the corresponding pixel
         coordinates. Here are my my results:
       </p>
+      <p class="imgTitle">Network architecture</p>
+      <img src="images/mlp_img.jpg" class="noteImage" />
       <p class="imgTitle">Original Image:</p>
       <img src="images/fox.jpg" class="noteImage" />
       <p class="imgTitle">
@@ -345,6 +347,98 @@
         but it still goes to good results quickly. Also, we can see that for a
         more complex image like this, it is harder to reach a higher PSNR.
       </p>
+      <hr />
+      <h3>Part 2: Fit a Neural Radiance Field from Multi-view Images</h3>
+      <p class="introduction">
+        After we are done with the 2D example, we can now jump in to 3D. In this
+        part, we are given the all the images of a lego taken at different
+        positions with all the extrinsics and intrinsics of the camera. We need
+        to inverse rendering from multi-view calibrated images and reconstruct
+        the 3D scene of the lego. But in order to achieve that, we need to first
+        go through some steps that will help us to get the dats that we need.
+      </p>
+
+      <h3>Part 2 - 1: Create Rays from Cameras</h3>
+      <p class="introduction">
+        For NeRF, we need to get the location of the camera in the reference of
+        the world frame, and also the rays that goes from the corresponding
+        camera center through the pixel to the actual point of the object in 3D
+        scene. Here are the major ideas when I implemented the functions:
+      </p>
+      <ul class="questions">
+        <li>
+          transform(c2w, x_c): This one is fairly easy, since c2w transformation
+          will transform the points in camera frame to the world frame, so we
+          can just do matrix mutiplication. Note that since we want it to be
+          batched, I used np.matmul().
+        </li>
+
+        <li>
+          pixel_to_camera(K, uv, s): Since are given the function in the spec,
+          so what we need to do is just invert the process. So I just use
+          np.linalg.inv() to get the inverse of the K, and do matrix
+          multiplication to get the coordinate.
+        </li>
+
+        <li>
+          pixel_to_ray(K, c2w, uv): In this function, I used the first 2
+          functions that we defined above. I first use the pixel_to_camera
+          function to get the pixel position in camera frame, and use transform
+          to get the coresponding positions in the world frame. And then I just
+          follow the formula provided in the spec to get r_o and r_d. Note that
+          since we are given c2w instead of w2c, the r_o formula is different
+          from the spec.
+        </li>
+      </ul>
+      <hr />
+      <h3>Part 2 - 2: Sampling</h3>
+      <p class="introduction"></p>
+      <ul class="questions">
+        <li>
+          Sampling Rays from Images: For this function, I first randomly
+          selected N amount of images and its corresponding transformation
+          matrix. And also randomly get N amount of pixel coordinates and
+          saparte them into u and v. And then I use the randomly slected images
+          and u v to get the true pixel value, and call function pixel_to_ray
+          with the randomly selected transformation matrix and uv (may need to
+          flip it) to get r_o, r_d.
+        </li>
+
+        <li>
+          Sampling Points along Rays: This part is fairly easy, I just follow
+          the spec and do some reshaping to make sure I can broadcast the t
+          correctly and return the correct shape that I want.
+        </li>
+      </ul>
+      <hr />
+      <h3>Part 2 - 3: Putting the Dataloading All Together</h3>
+      <p class="introduction">
+        This part is where we actually see whether we implemented the previous
+        parts correctly or not. We are given some code to visualoze the images,
+        camera positions and rays. So we can easily tell whether there is any
+        problem with the implementation. Note that since I implement the
+        RaysData a little differently, so I changes somce given code, but
+        everything works fine. Here is my results:
+      </p>
+      <p class="imgTitle">
+        Visualization of the rays, camera positions, and images (N = 100)
+      </p>
+      <img src="images/viser.png" class="noteImage" />
+      <hr />
+      <h3>Part 2 - 4: Neural Radiance Field</h3>
+      <p class="introduction" ß>
+        This part is really similar to what we did in part 1, but the
+        architecture is more complex. Most of the things that we do here is just
+        more of what we did in part 1. But there are some small things that we
+        need to be careful about. Since the shape of the x (coordinates) and r_d
+        will be in differenet shape, so we need to do something about the
+        positional encoding of the 2 inputs, I personally have 2 different
+        functions for the job. But there are some other ways to implement it as
+        well. Also, there maybe some issue with the concatanation because of 2
+        inputs has different shapes, I just broadcast it by repeating the r_d.
+      </p>
+      <p class="imgTitle">Network architecture</p>
+      <img src="images/MLP_part2.png" class="noteImage" />
       <hr />
     </div>
   </body>
