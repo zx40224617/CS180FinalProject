@@ -46,10 +46,12 @@
         consecutive bloacks of 256 hindden units Linear Layer followed by ReLU
         activation. And then a Linear Layer of 3 hidden units and a Sigmoid
         activation at the end to predict the rgb (3D) at the corresponding pixel
-        coordinates. Here are my my results:
+        coordinates. Here are my results:
       </p>
       <p class="imgTitle">Network architecture</p>
       <img src="images/mlp_img.jpg" class="noteImage" />
+
+      <h3>Final Results:</h3>
       <p class="imgTitle">Original Image:</p>
       <img src="images/fox.jpg" class="noteImage" />
       <p class="imgTitle">
@@ -183,8 +185,7 @@
       <p class="introduction">
         As we can see in the predicted graph, with the learning rate 0.001 that
         is a lot smaller than the recommened 0.01, the model is converging a
-        liitle slower, but it will eventually get a good result. Here the result
-        using my own image:
+        liitle slower, but it will eventually get a good result.
       </p>
 
       <p class="imgTitle">
@@ -626,13 +627,15 @@
         After we got everything above, we can now start trainging and sampling,
         here are my results:
       </p>
-      <hr />
+
       <p class="imgTitle">Training PSNR (2000 iterations):</p>
       <img
         src="images/training NeRF PSNR 2000 lr = 0.0005.jpg"
         class="noteImage"
       />
-      <p class="imgTitle">Validation PSNR (every 10 iterations):</p>
+      <p class="imgTitle">
+        Validation PSNR (2000 iterations sample every 10 iterations):
+      </p>
       <img
         src="images/validation NeRF PSNR 2000 lr = 0.0005.jpg"
         class="noteImage"
@@ -1097,13 +1100,25 @@
         that I look at to implement this Bells & Whistles. The idea is easy, we
         assume that the volume has a color, and we treat the process of adding
         the color as alpha blending. Where the alpha here is the opacity of the
-        rgb value. Here is my result:
+        rgb value. Note that we only need to change the volume rendering during
+        sample time, there is no need to retrain the model, here is my result:
       </p>
 
       <p class="imgTitle">
         Spherical rendering of the lego with a light purple background:
       </p>
       <img src="images/lego_with_purple_background (1).gif" class="noteImage" />
+
+      <hr />
+      <h3>Final Reflection - Finale</h3>
+      <p class="introduction">
+        This project is really fun to implement since I am really interested in
+        computer vision about 3D scene. And I think there maybe a lot of fun
+        things that I can try to explore myself like D-NeRF and instruct
+        NeRf-to-NeRF. At last, thank you so much for whoever is reading this
+        message, this is a really good semester to me. Hope you have a nice day
+        and a good winter break.
+      </p>
     </div>
   </body>
 </html>
