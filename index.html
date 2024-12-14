@@ -53,7 +53,7 @@
       <p class="imgTitle">Original Image:</p>
       <img src="images/fox.jpg" class="noteImage" />
       <p class="imgTitle">
-        PSNR over 2000 iterations with lr = 0.01, batch_szie = 10000
+        PSNR over 2000 iterations with lr = 0.01, batch_szie = 10000, L = 10
       </p>
       <img src="images/fox PSNR 2000.jpg" class="noteImage" />
 
@@ -104,7 +104,7 @@
       </div>
 
       <p class="imgTitle">
-        PSNR over 2000 iterations with lr = 0.001, batch_szie = 10000
+        PSNR over 2000 iterations with lr = 0.001, batch_szie = 10000, L = 10
       </p>
       <img src="images/fox PSNR 2000 lr = 0.001.jpg" class="noteImage" />
 
@@ -186,10 +186,94 @@
         liitle slower, but it will eventually get a good result. Here the result
         using my own image:
       </p>
+
+      <p class="imgTitle">
+        PSNR over 2000 iterations with lr = 0.01, batch_szie = 10000, L = 5
+      </p>
+      <img src="images/Fox PSNR 2000 lr = 0.01 L = 5.jpg" class="noteImage" />
+
+      <p class="imgTitle">Predicted Image at different iterations:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">10 iterations:</p>
+          <img
+            src="images/Fox reconstruction 10 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">20 iterations:</p>
+          <img
+            src="images/Fox reconstruction 20 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">50 iterations:</p>
+          <img
+            src="images/Fox reconstruction 50 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">100 iterations:</p>
+          <img
+            src="images/Fox reconstruction 100 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">200 iterations:</p>
+          <img
+            src="images/Fox reconstruction 200 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">300 iterations:</p>
+          <img
+            src="images/Fox reconstruction 300 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">500 iterations:</p>
+          <img
+            src="images/Fox reconstruction 500 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">1000 iterations:</p>
+          <img
+            src="images/Fox reconstruction 1000 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">2000 iterations:</p>
+          <img
+            src="images/Fox reconstruction 2000 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+      <p class="introduction">
+        As we can see in the predicted graph, with a lower L in the Positional
+        Encoding, the PSNR become lower and the images is a lot more blurry at
+        the same iteration step than the higher L.
+      </p>
+
       <p class="imgTitle">Original Image:</p>
       <img src="images/Berkeley Dawn.webp" class="noteImage" />
       <p class="imgTitle">
-        PSNR over 2000 iterations with lr = 0.01, batch_szie = 10000
+        PSNR over 2000 iterations with lr = 0.01, batch_szie = 10000, L = 10
       </p>
       <img src="images/Berkeley PSNR 2000 lr = 0.01.jpg" class="noteImage" />
       <p class="imgTitle">Predicted Image at different iterations:</p>
@@ -265,7 +349,7 @@
         </div>
       </div>
       <p class="imgTitle">
-        PSNR over 2000 iterations with lr = 0.001, batch_szie = 10000
+        PSNR over 2000 iterations with lr = 0.001, batch_szie = 10000, L = 10
       </p>
       <img src="images/Berkeley PSNR 2000 lr = 0.001.jpg" class="noteImage" />
 
@@ -347,6 +431,91 @@
         but it still goes to good results quickly. Also, we can see that for a
         more complex image like this, it is harder to reach a higher PSNR.
       </p>
+
+      <p class="imgTitle">
+        PSNR over 2000 iterations with lr = 0.01, batch_szie = 10000, L = 5
+      </p>
+      <img
+        src="images/Berkeley PSNR 2000 lr = 0.01 L = 5.jpg"
+        class="noteImage"
+      />
+
+      <p class="imgTitle">Predicted Image at different iterations:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">10 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 10 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">20 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 20 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">50 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 50 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">100 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 100 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">200 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 200 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">300 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 300 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">500 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 500 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">1000 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 1000 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">2000 iterations:</p>
+          <img
+            src="images/Berkeley reconstruction 2000 lr = 0.01 L = 5.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+      <p class="introduction">
+        Over here, we got similat observation as above as well. When we lower L,
+        the images will become blurry and the PSNR is lower.
+      </p>
       <hr />
       <h3>Part 2: Fit a Neural Radiance Field from Multi-view Images</h3>
       <p class="introduction">
@@ -426,7 +595,7 @@
       <img src="images/viser.png" class="noteImage" />
       <hr />
       <h3>Part 2 - 4: Neural Radiance Field</h3>
-      <p class="introduction" ß>
+      <p class="introduction">
         This part is really similar to what we did in part 1, but the
         architecture is more complex. Most of the things that we do here is just
         more of what we did in part 1. But there are some small things that we
@@ -440,6 +609,501 @@
       <p class="imgTitle">Network architecture</p>
       <img src="images/MLP_part2.png" class="noteImage" />
       <hr />
+
+      <h3>Part 2 - 5: Volume Rendering</h3>
+      <p class="introduction">
+        This part is technically just implementing the formula that is provided
+        in the spec. I first use torch.exp() and torch.cumsum() to calculate
+        \(T_i\). Note that since we only add until i - 1, I prepend 1 to \(T_i\)
+        and get rid of the last item. I then just follow the rest of the formula
+        to get the rendered_color using torch.sum().
+      </p>
+      <p class="imgTitle">Volume Rendering Formula:</p>
+      <img src="images/Formula.png" class="noteImage" />
+      <hr />
+      <h3>Final Results</h3>
+      <p class="introduction">
+        After we got everything above, we can now start trainging and sampling,
+        here are my results:
+      </p>
+      <hr />
+      <p class="imgTitle">Training PSNR (2000 iterations):</p>
+      <img
+        src="images/training NeRF PSNR 2000 lr = 0.0005.jpg"
+        class="noteImage"
+      />
+      <p class="imgTitle">Validation PSNR (every 10 iterations):</p>
+      <img
+        src="images/validation NeRF PSNR 2000 lr = 0.0005.jpg"
+        class="noteImage"
+      />
+
+      <p class="imgTitle">Perdicted Images at iterations 10:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 1:</p>
+          <img
+            src="images/NeRF reconstruction image 0 at 10 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 2:</p>
+          <img
+            src="images/NeRF reconstruction image 1 at 10 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 3:</p>
+          <img
+            src="images/NeRF reconstruction image 2 at 10 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 4:</p>
+          <img
+            src="images/NeRF reconstruction image 3 at 10 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 5:</p>
+          <img
+            src="images/NeRF reconstruction image 4 at 10 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 6:</p>
+          <img
+            src="images/NeRF reconstruction image 5 at 10 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <p class="imgTitle">Predicted Images at iterations 20:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 1:</p>
+          <img
+            src="images/NeRF reconstruction image 0 at 20 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 2:</p>
+          <img
+            src="images/NeRF reconstruction image 1 at 20 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 3:</p>
+          <img
+            src="images/NeRF reconstruction image 2 at 20 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 4:</p>
+          <img
+            src="images/NeRF reconstruction image 3 at 20 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 5:</p>
+          <img
+            src="images/NeRF reconstruction image 4 at 20 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 6:</p>
+          <img
+            src="images/NeRF reconstruction image 5 at 20 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <p class="imgTitle">Predicted Images at iterations 50:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 1:</p>
+          <img
+            src="images/NeRF reconstruction image 0 at 50 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 2:</p>
+          <img
+            src="images/NeRF reconstruction image 1 at 50 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 3:</p>
+          <img
+            src="images/NeRF reconstruction image 2 at 50 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 4:</p>
+          <img
+            src="images/NeRF reconstruction image 3 at 50 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 5:</p>
+          <img
+            src="images/NeRF reconstruction image 4 at 50 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 6:</p>
+          <img
+            src="images/NeRF reconstruction image 5 at 50 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <p class="imgTitle">Predicted Images at iterations 100:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 1:</p>
+          <img
+            src="images/NeRF reconstruction image 0 at 100 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 2:</p>
+          <img
+            src="images/NeRF reconstruction image 1 at 100 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 3:</p>
+          <img
+            src="images/NeRF reconstruction image 2 at 100 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 4:</p>
+          <img
+            src="images/NeRF reconstruction image 3 at 100 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 5:</p>
+          <img
+            src="images/NeRF reconstruction image 4 at 100 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 6:</p>
+          <img
+            src="images/NeRF reconstruction image 5 at 100 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <p class="imgTitle">Predicted Images at iterations 200:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 1:</p>
+          <img
+            src="images/NeRF reconstruction image 0 at 200 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 2:</p>
+          <img
+            src="images/NeRF reconstruction image 1 at 200 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 3:</p>
+          <img
+            src="images/NeRF reconstruction image 2 at 200 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 4:</p>
+          <img
+            src="images/NeRF reconstruction image 3 at 200 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 5:</p>
+          <img
+            src="images/NeRF reconstruction image 4 at 200 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 6:</p>
+          <img
+            src="images/NeRF reconstruction image 5 at 200 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+      <p class="imgTitle">Predicted Images at iterations 300:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 1:</p>
+          <img
+            src="images/NeRF reconstruction image 0 at 300 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 2:</p>
+          <img
+            src="images/NeRF reconstruction image 1 at 300 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 3:</p>
+          <img
+            src="images/NeRF reconstruction image 2 at 300 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 4:</p>
+          <img
+            src="images/NeRF reconstruction image 3 at 300 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 5:</p>
+          <img
+            src="images/NeRF reconstruction image 4 at 300 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 6:</p>
+          <img
+            src="images/NeRF reconstruction image 5 at 300 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <p class="imgTitle">Predicted Images at iterations 500:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 1:</p>
+          <img
+            src="images/NeRF reconstruction image 0 at 500 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 2:</p>
+          <img
+            src="images/NeRF reconstruction image 1 at 500 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 3:</p>
+          <img
+            src="images/NeRF reconstruction image 2 at 500 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 4:</p>
+          <img
+            src="images/NeRF reconstruction image 3 at 500 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 5:</p>
+          <img
+            src="images/NeRF reconstruction image 4 at 500 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 6:</p>
+          <img
+            src="images/NeRF reconstruction image 5 at 500 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <p class="imgTitle">Predicted Images at iterations 1000:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 1:</p>
+          <img
+            src="images/NeRF reconstruction image 0 at 1000 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 2:</p>
+          <img
+            src="images/NeRF reconstruction image 1 at 1000 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 3:</p>
+          <img
+            src="images/NeRF reconstruction image 2 at 1000 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 4:</p>
+          <img
+            src="images/NeRF reconstruction image 3 at 1000 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 5:</p>
+          <img
+            src="images/NeRF reconstruction image 4 at 1000 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 6:</p>
+          <img
+            src="images/NeRF reconstruction image 5 at 1000 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <p class="imgTitle">Predicted Images at iterations 2000:</p>
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 1:</p>
+          <img
+            src="images/NeRF reconstruction image 0 at 2000 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 2:</p>
+          <img
+            src="images/NeRF reconstruction image 1 at 2000 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 3:</p>
+          <img
+            src="images/NeRF reconstruction image 2 at 2000 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <div class="imageWrapper">
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 4:</p>
+          <img
+            src="images/NeRF reconstruction image 3 at 2000 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 5:</p>
+          <img
+            src="images/NeRF reconstruction image 4 at 2000 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+        <div class="title-image-wrapper">
+          <p class="imagSubTitle">Validation Image 6:</p>
+          <img
+            src="images/NeRF reconstruction image 5 at 2000 lr = 0.0005.jpg"
+            class="resultImage"
+          />
+        </div>
+      </div>
+
+      <p class="introduction">
+        And we can now use the given test camera extrinsics to genrate the
+        spherical rendering of the lego video, Here are my results
+      </p>
+
+      <p class="imgTitle">Spherical rendering of the lego</p>
+      <img src="images/lego (1).gif" class="noteImage" />
+      <hr />
+      <h3>Bells & Whistles - Lego video with a different background color</h3>
+      <p class="introduction">
+        I think this Bells & Whistles is fairly easy but also genrate a good
+        looking result. Here is the
+        <a
+          href="https://www.scratchapixel.com/lessons/3d-basic-rendering/volume-rendering-for-developers/intro-volume-rendering.html"
+          >reference website</a
+        >
+        that I look at to implement this Bells & Whistles. The idea is easy, we
+        assume that the volume has a color, and we treat the process of adding
+        the color as alpha blending. Where the alpha here is the opacity of the
+        rgb value. Here is my result:
+      </p>
+
+      <p class="imgTitle">
+        Spherical rendering of the lego with a light purple background:
+      </p>
+      <img src="images/lego_with_purple_background (1).gif" class="noteImage" />
     </div>
   </body>
 </html>
