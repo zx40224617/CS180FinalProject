@@ -525,7 +525,7 @@
         positions with all the extrinsics and intrinsics of the camera. We need
         to inverse rendering from multi-view calibrated images and reconstruct
         the 3D scene of the lego. But in order to achieve that, we need to first
-        go through some steps that will help us to get the dats that we need.
+        go through some steps that will help us to get the datas that we need.
       </p>
 
       <h3>Part 2 - 1: Create Rays from Cameras</h3>
@@ -562,16 +562,16 @@
       </ul>
       <hr />
       <h3>Part 2 - 2: Sampling</h3>
-      <p class="introduction"></p>
       <ul class="questions">
         <li>
-          Sampling Rays from Images: For this function, I first randomly
-          selected N amount of images and its corresponding transformation
-          matrix. And also randomly get N amount of pixel coordinates and
-          saparte them into u and v. And then I use the randomly slected images
-          and u v to get the true pixel value, and call function pixel_to_ray
-          with the randomly selected transformation matrix and uv (may need to
-          flip it) to get r_o, r_d.
+          Sampling Rays from Images: For this function, I first use
+          np.meshgrid() to acquire all the pixel coordinate in an image, and
+          flat it to get all the pixels value of the images. And I use
+          torch.repeat_interleave() to repeat all the transformation that I need
+          for all the coordinates in each images. I also use torch.tile() to get
+          the coordinates in all the images (uv). I then call function
+          pixel_to_ray with all the transformation matrix and uv (may need to
+          flip it) to get r_o, r_d. Note that I return everything separately.
         </li>
 
         <li>
@@ -584,11 +584,13 @@
       <h3>Part 2 - 3: Putting the Dataloading All Together</h3>
       <p class="introduction">
         This part is where we actually see whether we implemented the previous
-        parts correctly or not. We are given some code to visualoze the images,
+        parts correctly or not. We are given some code to visualize the images,
         camera positions and rays. So we can easily tell whether there is any
-        problem with the implementation. Note that since I implement the
-        RaysData a little differently, so I changes somce given code, but
-        everything works fine. Here is my results:
+        problem with the implementation. The idea is just randomly select N
+        numbers of rays and pixels, and use the provided code to visualize those
+        datas. Note that since I implement the RaysData a little differently, so
+        I changes some given code, but everything works fine. Here is my
+        results:
       </p>
       <p class="imgTitle">
         Visualization of the rays, camera positions, and images (N = 100)
@@ -1087,7 +1089,7 @@
       </p>
 
       <p class="imgTitle">Spherical rendering of the lego</p>
-      <img src="images/lego (1).gif" class="noteImage" />
+      <img src="images/lego 10.gif" class="noteImage" />
       <hr />
       <h3>Bells & Whistles - Lego video with a different background color</h3>
       <p class="introduction">
@@ -1107,7 +1109,7 @@
       <p class="imgTitle">
         Spherical rendering of the lego with a light purple background:
       </p>
-      <img src="images/lego_with_purple_background (1).gif" class="noteImage" />
+      <img src="images/lego_with_purple_background 10.gif" class="noteImage" />
 
       <hr />
       <h3>Final Reflection - Finale</h3>
