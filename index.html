@@ -586,11 +586,12 @@
         This part is where we actually see whether we implemented the previous
         parts correctly or not. We are given some code to visualize the images,
         camera positions and rays. So we can easily tell whether there is any
-        problem with the implementation. The idea is just randomly select N
-        numbers of rays and pixels, and use the provided code to visualize those
-        datas. Note that since I implement the RaysData a little differently, so
-        I changes some given code, but everything works fine. Here is my
-        results:
+        problem with the implementation. The idea is similar to what we did in
+        part 1, we write a dataloader that randomly select N numbers of rays and
+        pixels in the data we got in previous part, and use the provided code to
+        visualize those datas. Note that since I implement the RaysData a little
+        differently, so I changes some given code, but everything works fine.
+        Here is my results with N = 100:
       </p>
       <p class="imgTitle">
         Visualization of the rays, camera positions, and images (N = 100)
@@ -619,7 +620,13 @@
         in the spec. I first use torch.exp() and torch.cumsum() to calculate
         \(T_i\). Note that since we only add until i - 1, I prepend 1 to \(T_i\)
         and get rid of the last item. I then just follow the rest of the formula
-        to get the rendered_color using torch.sum().
+        to get the rendered_color using torch.sum(). After everything works, we
+        can start training. Since We don't have the true value of sigmas, we
+        need to first let the network perdict the sigmas and pixel values, use
+        the sigmas and pixels value to do volume rendering, and compare the
+        final pixels to the original pixels to get the loss. And that's why the
+        spec mentioned that we need to implement this part using torch for
+        backpropagation.
       </p>
       <p class="imgTitle">Volume Rendering Formula:</p>
       <img src="images/Formula.png" class="noteImage" />
@@ -636,7 +643,7 @@
         class="noteImage"
       />
       <p class="imgTitle">
-        Validation PSNR (2000 iterations sample every 10 iterations):
+        Validation PSNR (2000 iterations sample every 20 iterations):
       </p>
       <img
         src="images/validation NeRF PSNR 2000 lr = 0.0005.jpg"
@@ -1089,7 +1096,7 @@
       </p>
 
       <p class="imgTitle">Spherical rendering of the lego</p>
-      <img src="images/lego 10.gif" class="noteImage" />
+      <img src="images/lego L = 10.gif" class="noteImage" />
       <hr />
       <h3>Bells & Whistles - Lego video with a different background color</h3>
       <p class="introduction">
@@ -1109,7 +1116,10 @@
       <p class="imgTitle">
         Spherical rendering of the lego with a light purple background:
       </p>
-      <img src="images/lego_with_purple_background 10.gif" class="noteImage" />
+      <img
+        src="images/lego_with_purple_background L = 10.gif"
+        class="noteImage"
+      />
 
       <hr />
       <h3>Final Reflection - Finale</h3>
